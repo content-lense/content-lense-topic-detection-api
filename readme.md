@@ -20,7 +20,7 @@ Build the Docker image by running:
 
 Start the container with
 
-`docker run -it --rm -p 5000:5000 content-lense-text-complexity`
+`docker run -it --rm -p 5001:5001 content-lense-text-complexity`
 
 ## Using the api
 
