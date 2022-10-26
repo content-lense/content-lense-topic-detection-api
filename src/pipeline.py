@@ -61,7 +61,7 @@ def processArticle(article):
 
     try:
         for part in article:
-            if (part in ["heading", "summary", "body"] ):
+            if ((part in ["heading", "summary", "body"]) and (type(article[part]) == str )):
                 print("calculate %s" % (part))
                 part_json = calc_statistics(article[part])
                 res[part] = part_json
