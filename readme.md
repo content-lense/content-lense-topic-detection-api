@@ -9,7 +9,6 @@ _This API calculates the complexity, reading time and more basic stats of the gi
 
 Please note that this repository is part of the [Content Lense Project](https://github.com/content-lense) and depends on the [Content Lense API](https://github.com/content-lense/content-lense-api).
 
-
 ## Building the Docker image
 
 Build the Docker image by running:
@@ -30,11 +29,12 @@ To analyse an article send a post request to the `/articles` endpoint as `Conten
 
 ```json
 {
-    "heading":"The Headline of the Article",
-    "summary":"A short summary / abstract of the article",
-    "body": "The entire fulltext"
+  "heading": "The Headline of the Article",
+  "summary": "A short summary / abstract of the article",
+  "body": "The entire fulltext"
 }
 ```
+
 The return type looks like the following:
 
 ```javascript
@@ -44,8 +44,8 @@ The return type looks like the following:
             "averageWordsPerSentence": 8.2,
             "meanCharsPerWord": 4.439024390243903,
             "meanWordsPerSentence": 6.833333333333333,
-            "medianCharsPerWord": 4.0,
-            "medianWordsPerSentence": 5.5,
+            "medianCharsPerWord": 4,
+            "medianWordsPerSentence": 5,
             "totalChars": 190,
             "totalLetters": 182,
             "totalSentences": 5,
@@ -69,10 +69,9 @@ The return type looks like the following:
 
 - `wienerSachtextIndex` (https://de.wikipedia.org/wiki/Lesbarkeitsindex)
 - used Libraries
-    - `TextStat` (https://github.com/textstat/textstat)
-    - `TextDescriptives` (https://hlasse.github.io/TextDescriptives)
-    - `Spacy Models` (https://spacy.io/usage/models)
-
+  - `TextStat` (https://github.com/textstat/textstat)
+  - `TextDescriptives` (https://hlasse.github.io/TextDescriptives)
+  - `Spacy Models` (https://spacy.io/usage/models)
 
 ## Supported by
 
@@ -85,7 +84,6 @@ Media Tech Lab [`media-tech-lab`](https://github.com/media-tech-lab)
 ---
 
 Cloud Creators GmbH [`cloud-creators`](https://cloud-creators.de)
-
 
 <a href="https://cloud-creators.de">
     <img src="https://cloud-creators.de/assets/images/cc-logo.svg" width="240" title="Supported by Cloud Creators GmbH">

@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  stats:
+    build:
+      context: .
+      dockerfile: ./Docker/Dockerfile
+    command: python -m flask --app src/api.py --debug run --port 5001 --host 0.0.0.0
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./src:/home/python/src

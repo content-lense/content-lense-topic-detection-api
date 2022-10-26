@@ -16,4 +16,4 @@ COPY ./* ./
 
 EXPOSE 5001
 
-CMD python api.py
+CMD python src/api.py
