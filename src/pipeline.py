@@ -9,9 +9,9 @@ nlp.add_pipe("textdescriptives")
 def calc_statistics(txt: str, language: str = "en"):
     textstat.set_lang(language)
     wienerSachtextIndex = textstat.wiener_sachtextformel(txt, 1)
-    readingTimeInMin = textstat.reading_time(txt, ms_per_char=14.69)
     totalSyllables = textstat.syllable_count(txt)
     totalWords = textstat.lexicon_count(txt, removepunct=True)
+    readingTimeInMin = totalWords/200
     totalSentences = textstat.sentence_count(txt)
     totalChars = textstat.char_count(txt, ignore_spaces=True)
     totalLetters = textstat.letter_count(txt, ignore_spaces=True)
