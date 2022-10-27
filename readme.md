@@ -65,6 +65,8 @@ The return type looks like the following:
 }
 ```
 
+We assume a reading speed of 200 words per minute to calculate the estimated reading time.
+
 ### Sources
 
 - `wienerSachtextIndex` (https://de.wikipedia.org/wiki/Lesbarkeitsindex)
