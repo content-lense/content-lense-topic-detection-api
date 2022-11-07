@@ -5,21 +5,18 @@
 </p>
 
 _This is a microservice APIof Content Lense, a project that aims at enabling publishers to easily gain insights into their content._
-_This API calculates the complexity, reading time and more basic stats of the given article._
+_This API determines n topics of the given article from a given list of topics._
 
 Please note that this repository is part of the [Content Lense Project](https://github.com/content-lense) and depends on the [Content Lense API](https://github.com/content-lense/content-lense-api).
 
-## Building the Docker image
 
-Build the Docker image by running:
-
-`docker build -f Docker/Dockerfile -t content-lense-text-complexity:latest .`
-
-## Running the service
+## Running the service with Docker
 
 Start the container with
 
-`docker run -it --rm -p 5001:5001 content-lense-text-complexity`
+`docker compose up`
+
+Use `-d` to run it in the background.
 
 ## Using the api
 
@@ -29,51 +26,24 @@ To analyse an article send a post request to the `/articles` endpoint as `Conten
 
 ```json
 {
-  "heading": "The Headline of the Article",
-  "summary": "A short summary / abstract of the article",
-  "body": "The entire fulltext"
+  "body": "The entire article.",
+  "customTopics": ["Wirtscahft", "Fußball", "Politik", "Wissenschaft", "Geld"],
+  "totalTopics": 3
 }
 ```
 
 The return type looks like the following:
 
-```javascript
+```json
 {
-    "body": {
-        "descriptives": {
-            "averageWordsPerSentence": 8.2,
-            "meanCharsPerWord": 4.439024390243903,
-            "meanWordsPerSentence": 6.833333333333333,
-            "medianCharsPerWord": 4,
-            "medianWordsPerSentence": 5,
-            "totalChars": 190,
-            "totalLetters": 182,
-            "totalSentences": 5,
-            "totalSyllables": 52,
-            "totalUniqueWords": 37,
-            "totalWords": 41,
-            "totalWordsLongerThanThreeSyllables": 3,
-            "totalSingleSyllableWords": 33
-        },
-        "scores": {
-            "readingTimeInMinutes": 2.79,
-            "wienerSachtextIndex": 1.2 // see https:/
-        }
-    },
-    "heading": {/*... same result keys as for body ... */},
-    "summary": {/*... same result keys as for body ... */}
+    "topics": ["Wissenschaft", "Politik", "Geld"]
 }
 ```
 
-We assume a reading speed of 200 words per minute to calculate the estimated reading time.
-
 ### Sources
 
-- `wienerSachtextIndex` (https://de.wikipedia.org/wiki/Lesbarkeitsindex)
-- used Libraries
-  - `TextStat` (https://github.com/textstat/textstat)
-  - `TextDescriptives` (https://hlasse.github.io/TextDescriptives)
-  - `Spacy Models` (https://spacy.io/usage/models)
+- Huggingfaces `Zero-Shot-Classification` (https://huggingface.co/docs/transformers/v4.15.0/en/main_classes/pipelines#transformers.ZeroShotClassificationPipeline)
+- Pretrained Model with German Dataset (https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli?candidateLabels=politics%2C+economy%2C+entertainment%2C+environment&multiClass=false&text=Angela+Merkel+ist+eine+Politikerin+in+Deutschland+und+Vorsitzende+der+CDU)
 
 ## Supported by
 

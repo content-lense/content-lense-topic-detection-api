@@ -14,6 +14,6 @@ COPY ./* ./
 
 # RUN python -c 'import pipeline'
 
-EXPOSE 5001
+EXPOSE 5002
 
 CMD python src/api.py

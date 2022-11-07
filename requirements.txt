@@ -1,7 +1,2 @@
 flask
 flask_restful
-textstat==0.7.3
-spacy==3.4.2
-textdescriptives==1.1.0
-de-dep-news-trf @ https://github.com/explosion/spacy-models/releases/download/de_dep_news_trf-3.4.0/de_dep_news_trf-3.4.0-py3-none-any.whl
-en-core-web-trf @ https://github.com/explosion/spacy-models/releases/download/en_core_web_trf-3.4.1/en_core_web_trf-3.4.1-py3-none-any.whl
