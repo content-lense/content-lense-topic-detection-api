@@ -45,6 +45,12 @@ The return type looks like the following:
 - Huggingfaces `Zero-Shot-Classification` (https://huggingface.co/docs/transformers/v4.15.0/en/main_classes/pipelines#transformers.ZeroShotClassificationPipeline)
 - Pretrained Model with German Dataset (https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli?candidateLabels=politics%2C+economy%2C+entertainment%2C+environment&multiClass=false&text=Angela+Merkel+ist+eine+Politikerin+in+Deutschland+und+Vorsitzende+der+CDU)
 
+## Notes
+
+- it takes around 3 minutes to determine a topic for one article (30 topics, 700 words) because the docker container doesn*t use GPU
+- with GPU it would take less than a minute (dependend on GPU)
+  - around 20 sec for NVIDIA Tesla M60
+
 ## Supported by
 
 Media Tech Lab [`media-tech-lab`](https://github.com/media-tech-lab)
