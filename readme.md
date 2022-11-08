@@ -1,4 +1,4 @@
-# Welcome to Content Lense Text Complexity API 👋
+# Welcome to Content Lense Topic Detection API 👋
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/15559708/195378979-701254fa-ada7-41d4-abc7-494a40207a6d.png" />
