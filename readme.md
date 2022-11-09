@@ -27,7 +27,7 @@ To analyse an article send a post request to the `/articles` endpoint as `Conten
 ```json
 {
   "body": "The entire article.",
-  "customTopics": ["Wirtscahft", "Fußball", "Politik", "Wissenschaft", "Geld"],
+  "customTopics": ["Wirtschaft", "Fußball", "Politik", "Wissenschaft", "Geld"],
   "totalTopics": 3
 }
 ```
