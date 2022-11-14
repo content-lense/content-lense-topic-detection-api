@@ -27,7 +27,7 @@ To analyse an article send a post request to the `/articles` endpoint as `Conten
 ```json
 {
   "body": "The entire article.",
-  "customTopics": ["Wirtscahft", "Fußball", "Politik", "Wissenschaft", "Geld"],
+  "customTopics": ["Wirtschaft", "Fußball", "Politik", "Wissenschaft", "Geld"],
   "totalTopics": 3
 }
 ```
@@ -47,9 +47,9 @@ The return type looks like the following:
 
 ## Notes
 
-- it takes around 3 minutes to determine a topic for one article (30 topics, 700 words) because the docker container doesn*t use GPU
-- with GPU it would take less than a minute (dependend on GPU)
-  - around 20 sec for NVIDIA Tesla M60
+- as Docker is not _yet_ configured to use the GPU, it takes around 3 minutes to determine a topic for one article (30 topics, 700 words) 
+- we tested with GPU: this leads to less than a minute (obviously depending on the GPU instance)
+  - e.g. ~ 20 sec for NVIDIA Tesla M60
 
 ## Supported by
 
